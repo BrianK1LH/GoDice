@@ -71,6 +71,7 @@ GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
 	// add die status indicator
 	const dieStatus = document.createElement('div');
 	dieStatus.id = `${diceId}-die-status`;
+	//dieStatus.className = 'dice-name';
 	diceHtmlEl.append(dieStatus)
 
 	// inject dice into html
@@ -129,12 +130,12 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 	
 	let dieColor = '';
 	switch (color) {
-		case 0: dieColor = 'Color_Black';
-		case 1: dieColor = 'Color_Red';
-		case 2: dieColor = 'Color_Green';
-		case 3: dieColor = 'Color_Blue';
-		case 4: dieColor = 'Color_Yellow';
-		case 5: dieColor = 'Color_Orange';
+		case 0: dieColor = 'Color_Black' break;
+		case 1: dieColor = 'Color_Red' break;
+		case 2: dieColor = 'Color_Green' break;
+		case 3: dieColor = 'Color_Blue' break;
+		case 4: dieColor = 'Color_Yellow' break;
+		case 5: dieColor = 'Color_Orange' break;
 	}
 	
 	// put dice color value into battery indicator html element
