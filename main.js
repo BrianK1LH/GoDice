@@ -63,8 +63,6 @@ GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
 	diceHtmlEl.append(getDiceColorButton)
 	
 	
-	
-
 	// add battery level indicator
 	const colorIndicator = document.createElement('div');
 	colorIndicator.id = `${diceId}-color-indicator`;
@@ -77,6 +75,10 @@ GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
 
 	// inject dice into html
 	diceHost.appendChild(diceHtmlEl);
+	
+	diceInstance.getDiceColor(diceId);
+	
+	
 };
 
 
@@ -87,7 +89,7 @@ GoDice.prototype.onRollStart = (diceId) => {
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 
 	// show rolling 
-	diceIndicatorEl.textContent = "Rollling....";
+	diceIndicatorEl.textContent = "-R-";
 };
 
 GoDice.prototype.onStable = (diceId, value, xyzArray) => {
@@ -95,31 +97,18 @@ GoDice.prototype.onStable = (diceId, value, xyzArray) => {
 
 	// Get roll value indicator and show stable value
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
-	diceIndicatorEl.textContent = "Stable: " + value;
+	//diceIndicatorEl.textContent = "Stable: " + value;
+	diceIndicatorEl.textContent = value;
 };
 
-GoDice.prototype.onTiltStable = (diceId, xyzArray, value) => {
-	console.log("TiltStable: ", diceId, xyzArray);
-
-	// Get tile indicator and show raw data
-	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
-	diceIndicatorEl.textContent = "Tilt Stable: value: " + value + " , x=" + xyzArray[0] + " ,y=" + xyzArray[1] + " ,z=" + xyzArray[2];
-};
-
-GoDice.prototype.onFakeStable = (diceId, value, xyzArray) => {
-	console.log("FakeStable: ", diceId, value);
-
-	// Get tile indicator and show fake value
-	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
-	diceIndicatorEl.textContent = "Fake Stable: " + value;
-};
 
 GoDice.prototype.onMoveStable = (diceId, value, xyzArray) => {
 	console.log("MoveStable: ", diceId, value);
 
 	// Get tile indicator and show fake value
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
-	diceIndicatorEl.textContent = "Move Stable: " + value;
+	//diceIndicatorEl.textContent = "Move Stable: " + value;
+	diceIndicatorEl.textContent = value;
 };
 
 GoDice.prototype.onBatteryLevel = (diceId, batteryLevel) => {
@@ -137,7 +126,17 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 
 	// get dice color indicator element
 	const diceColorEl = document.getElementById(diceId + "-color-indicator");
-
+	
+	let dieColor = '';
+	switch (color) {
+		case 0: dieColor = 'Color_Black';
+		case 1: dieColor = 'Color_Red';
+		case 2: dieColor = 'Color_Green';
+		case 3: dieColor = 'Color_Blue';
+		case 4: dieColor = 'Color_Yellow';
+		case 5: dieColor = 'Color_Orange';
+	}
+	
 	// put dice color value into battery indicator html element
-	diceColorEl.textContent = "Color: " + color;
+	diceColorEl.textContent = "Color: " + dieColor;
 };
