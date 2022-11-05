@@ -130,17 +130,17 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 	
 	let dieColor = "";
 	switch (color) {
-		case "0": dieColor = "Black"; 
+		case 0: dieColor = "Black"; 
 			break;
-		case "1": dieColor = "Red"; 
+		case 1: dieColor = "Red"; 
 			break;
-		case "2": dieColor = "Green";
+		case 2: dieColor = "Green";
 			break;
-		case "3": dieColor = "Blue";
+		case 3: dieColor = "Blue";
 			break;
-		case "4": dieColor = "Yellow";
+		case 4: dieColor = "Yellow";
 			break;
-		case "5": dieColor = "Orange";
+		case 5: dieColor = "Orange";
 			break;
 		default: dieColor = "blank";
 	}
@@ -148,5 +148,5 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 	diceColorEl.className = `${dieColor}-die-status`;
 	
 	// put dice color value into battery indicator html element
-	diceColorEl.textContent = "Color: " + color  + " print: " + dieColor;
+	diceColorEl.textContent = "Color: " + color  + " print2: " + dieColor;
 };
