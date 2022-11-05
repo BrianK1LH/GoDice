@@ -55,30 +55,6 @@ GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
 	batteryIndicator.id = `${diceId}-battery-indicator`;
 	diceHtmlEl.append(batteryIndicator)
 
-	// set RGB color for the Led (e.g. blue)
-	const colorProfile = [[0, 0, 255], [0, 0, 255]];
-
-	// add "Led On" button to use goDice.switchOnLed(diceID,colorProfile) function
-	const ledOnButton = document.createElement('button');
-	ledOnButton.className = 'btn btn-outline-primary';
-	ledOnButton.onclick = diceInstance.setLed.bind(diceInstance, colorProfile[0], colorProfile[1])
-	ledOnButton.textContent = 'Switch On Led';
-	diceHtmlEl.append(ledOnButton)
-
-	// add "Led Off" button to use goDice.switchOffLed(diceID) function
-	const ledOffButton = document.createElement('button');
-	ledOffButton.className = 'btn btn-outline-primary';
-	ledOffButton.onclick = diceInstance.setLed.bind(diceInstance, [0], [0])
-	ledOffButton.textContent = 'Switch Off Led';
-	diceHtmlEl.append(ledOffButton)
-	
-	// Pulse Led
-	const ledPulseButton = document.createElement('button');
-	ledPulseButton.className = 'btn btn-outline-primary';
-	ledPulseButton.onclick = diceInstance.pulseLed.bind(diceInstance, 5, 30, 20, [0, 0, 255])
-	ledPulseButton.textContent = "Pulse"
-	diceHtmlEl.append(ledPulseButton)
-	
 	// get Dice color to use goDice.getDiceColor(diceID) function
 	const getDiceColorButton = document.createElement('button');
 	getDiceColorButton.className = 'btn btn-outline-primary';
@@ -86,50 +62,7 @@ GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
 	getDiceColorButton.textContent = 'Get Dice Color';
 	diceHtmlEl.append(getDiceColorButton)
 	
-	// Change die type buttons select
-	const d6Button = document.createElement('button');
-	d6Button.className = 'diebtn btn-outline-primary';
-	d6Button.onclick = diceInstance.setDieType.bind(diceInstance, GoDice.diceTypes.D6)
-	d6Button.textContent = 'D6';
-	diceHtmlEl.append(d6Button)
 	
-	// D20 Shell
-	const d20Button = document.createElement('button');
-	d20Button.className = 'diebtn btn-outline-primary';
-	d20Button.onclick = diceInstance.setDieType.bind(diceInstance, GoDice.diceTypes.D20)
-	d20Button.textContent = 'D20';
-	diceHtmlEl.append(d20Button)
-	
-	const d10Button = document.createElement('button');
-	d10Button.className = 'diebtn btn-outline-primary';
-	d10Button.onclick = diceInstance.setDieType.bind(diceInstance, GoDice.diceTypes.D10)
-	d10Button.textContent = 'D10';
-	diceHtmlEl.append(d10Button)
-	
-	const d10XButton = document.createElement('button');
-	d10XButton.className = 'diebtn btn-outline-primary';
-	d10XButton.onclick = diceInstance.setDieType.bind(diceInstance, GoDice.diceTypes.D10X)
-	d10XButton.textContent = 'D10X';
-	diceHtmlEl.append(d10XButton)
-	
-	// D24 Shell
-	const d4Button = document.createElement('button');
-	d4Button.className = 'diebtn btn-outline-primary';
-	d4Button.onclick = diceInstance.setDieType.bind(diceInstance, GoDice.diceTypes.D4)
-	d4Button.textContent = 'D4';
-	diceHtmlEl.append(d4Button)
-	
-	const d8Button = document.createElement('button');
-	d8Button.className = 'diebtn btn-outline-primary';
-	d8Button.onclick = diceInstance.setDieType.bind(diceInstance, GoDice.diceTypes.D8)
-	d8Button.textContent = 'D8';
-	diceHtmlEl.append(d8Button)
-	
-	const d12Button = document.createElement('button');
-	d12Button.className = 'diebtn btn-outline-primary';
-	d12Button.onclick = diceInstance.setDieType.bind(diceInstance, GoDice.diceTypes.D12)
-	d12Button.textContent = 'D12';
-	diceHtmlEl.append(d12Button)
 	
 
 	// add battery level indicator
