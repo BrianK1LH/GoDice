@@ -128,7 +128,7 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 	// get dice color indicator element
 	const diceColorEl = document.getElementById(diceId + "-color-indicator");
 	
-	let dieColor = "";
+	var dieColor = "";
 	switch (color) {
 		case 0: dieColor = "Black"; 
 			break;
