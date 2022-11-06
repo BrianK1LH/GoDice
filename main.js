@@ -6,6 +6,14 @@ function openConnectionDialog() {
 	newDice.requestDevice();
 }
 
+function getPowerOfDice() {
+	for (let diceId in connectedDice) {
+		let diceElem = connectedDice[diceId];
+		diceElem.getBatteryLevel();
+	}
+
+}
+
 /**
  * Get a new dice element or it's instance if it already exists
  * @param {string} diceID - the die unique identifier	 
@@ -116,10 +124,11 @@ GoDice.prototype.onBatteryLevel = (diceId, batteryLevel) => {
 	console.log("BetteryLevel: ", diceId, batteryLevel);
 
 	// get dice battery indicator element
-	const batteryLevelEl = document.getElementById(diceId + "-battery-indicator");
+	//const batteryLevelEl = document.getElementById(diceId + "-battery-indicator");
+	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 
 	// put battery level value into battery indicator html element
-	batteryLevelEl.textContent = batteryLevel;
+	diceIndicatorEl.textContent = batteryLevel;
 };
 
 GoDice.prototype.onDiceColor = (diceId, color) => {
