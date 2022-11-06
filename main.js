@@ -21,12 +21,13 @@ function checkSummary() {
 		summaryElem.textContent = "Sum: " + sumCount;
     } 
 }
+
 function getSumTotalOfDice() {
 	var countingDice = 0;
 	for (let diceId in connectedDice) {
 		//let diceElem = connectedDice[diceId];
 		let diceElem = document.getElementById(diceId + "-die-status");
-		countingDice += parseInt(countingDice+diceElem.textContent || 0)
+		countingDice += parseInt(diceElem.textContent || 0)
 	}
 	return countingDice;
 }
