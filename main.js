@@ -1,7 +1,7 @@
 const connectedDice = {};
 
-const diceHostDiv = document.getElementById("dice-host");
-diceHostDiv.requestFullscreen;
+const diceContainerDiv = document.getElementById("diceContainer");
+diceContainerDiv.requestFullscreen;
 
 // Open the Bluetooth connection dialog for choosing a GoDice to connect
 function openConnectionDialog() {
