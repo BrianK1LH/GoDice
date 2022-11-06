@@ -21,7 +21,7 @@
 	
 	<script src="./jquery-3.6.0.min.js"></script>
 	<script src="./godice.js"></script>
-	<script src="./main.js?v=6.4"></script>
+	<script src="./main.js?v=1.12"></script>
 	
 
 </head>
@@ -29,9 +29,9 @@
 <body>	
 	<div class="container">
 			<div class="container-fluid">
-			  		6.4
-				   <button onclick="openConnectionDialog()" type="button" class="btn btn-outline-primary">Connect</button>
-				   <button onclick="getPowerOfDice()" type="button" class="btn btn-outline-primary">Power</button>
+			  		v1.12
+				   <button onclick="openConnectionDialog()" type="button" class="btn btn-outline-primary">Connect Dice</button>
+				   <button onclick="getPowerOfDice()" type="button" class="btn btn-outline-primary">Power Levels</button>
 			 </div>
 		</nav>
 		<h3 id="gocube-message"></h3>
@@ -66,16 +66,17 @@
 	width: 100%;
 }
 .die-color {
+	display: table-cell;
 	border: 1px solid black;
 	border-radius: 5px;
     margin-right: 5px;
     margin-bottom: 5px;
     text-align: center;
-	vertical-align: middle;
+	vertical-align: middle
 	width: 100px;
 	height: 100px;
 	color: black;
-	font-size: 55px;
+	font-size: 65px;
 }
 .Black-die-color {
 	background-color: white;

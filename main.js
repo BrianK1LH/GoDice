@@ -160,5 +160,5 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 	
 	// put dice color value into battery indicator html element
 	//diceColorEl.textContent = dieColor;
-	diceIndicatorEl.textContent = "C";
+	diceIndicatorEl.textContent = "X";
 };
