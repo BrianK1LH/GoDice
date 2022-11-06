@@ -126,6 +126,7 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 	console.log("DiceColor: ", diceId, color);
 
 	// get dice color indicator element
+	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 	const diceColorEl = document.getElementById(diceId + "-color-indicator");
 	
 	var dieColor = "";
@@ -145,8 +146,9 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 		default: dieColor = "blank";
 	}
 	
-	diceColorEl.className = `${dieColor}-die-status`;
+	diceIndicatorEl.className = `${dieColor}-die-color die-color`;
+	//diceColorEl.className = `${dieColor}-die-color`;
 	
 	// put dice color value into battery indicator html element
-	diceColorEl.textContent = "Color: " + color  + " print2: " + dieColor;
+	diceColorEl.textContent = dieColor;
 };
