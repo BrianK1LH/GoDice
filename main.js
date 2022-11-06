@@ -126,7 +126,11 @@ GoDice.prototype.onBatteryLevel = (diceId, batteryLevel) => {
 	// get dice battery indicator element
 	//const batteryLevelEl = document.getElementById(diceId + "-battery-indicator");
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
-
+	
+	// convert 100 to 99 because CSS explode issues
+	if (batteryLevel == 100) {
+		batteryLevel = 99;
+	}
 	// put battery level value into battery indicator html element
 	diceIndicatorEl.textContent = batteryLevel;
 };
