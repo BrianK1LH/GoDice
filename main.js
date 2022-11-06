@@ -18,6 +18,7 @@ function getDiceHtmlEl(diceID) {
 		return newDiceEl;
 	}
 	return document.getElementById(diceID);
+	return document.getElementById(diceID);
 }
 
 GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
@@ -41,19 +42,19 @@ GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
 	const diceName = document.createElement('div');
 	diceName.className = 'dice-name';
 	diceName.textContent = `Dice ID: ${diceId}`;
-	diceHtmlEl.append(diceName)
+	//diceHtmlEl.append(diceName)
 
 	// add battery level button goDice.getBatteryLevel(diceID);
 	const batteryLevelButton = document.createElement('button');
 	batteryLevelButton.className = 'btn btn-outline-primary';
 	batteryLevelButton.onclick = diceInstance.getBatteryLevel.bind(diceInstance);
 	batteryLevelButton.textContent = 'Get Battery Level';
-	diceHtmlEl.append(batteryLevelButton)
+	//diceHtmlEl.append(batteryLevelButton)
 
 	// add battery level indicator
 	const batteryIndicator = document.createElement('div');
 	batteryIndicator.id = `${diceId}-battery-indicator`;
-	diceHtmlEl.append(batteryIndicator)
+	//diceHtmlEl.append(batteryIndicator)
 
 	// get Dice color to use goDice.getDiceColor(diceID) function
 	const getDiceColorButton = document.createElement('button');
