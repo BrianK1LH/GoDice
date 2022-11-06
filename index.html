@@ -21,7 +21,7 @@
 	
 	<script src="./jquery-3.6.0.min.js"></script>
 	<script src="./godice.js"></script>
-	<script src="./main.js?v=1.123"></script>
+	<script src="./main.js?v=1.14"></script>
 	
 
 </head>
@@ -29,7 +29,7 @@
 <body>	
 	<div class="container">
 			<div class="container-fluid">
-			  		v1.13
+			  		v1.14
 				   <button onclick="openConnectionDialog()" type="button" class="btn btn-outline-primary">Connect Dice</button>
 				   <button onclick="getPowerOfDice()" type="button" class="btn btn-outline-primary">Power Levels</button>
 			 </div>
@@ -49,8 +49,6 @@
 	display: inline-block;
 	margin-right: 5px;
     margin-bottom: 5px;
-	width: 100px;
-	height: 100px;
     /*width: 215px;*/
     /*height: 490px;*/
     /*border: 1px solid gray;*/
@@ -70,14 +68,13 @@
 	width: 100%;
 }
 .die-color {
-	display: table-cell;
 	border: 1px solid black;
 	border-radius: 5px;
-    
+    padding: 8px;
     text-align: center;
 	vertical-align: middle
-	/*width: 100px;
-	height: 100px;*/
+	width: 100px;
+	height: 100px;
 	color: black;
 	font-size: 65px;
 }
