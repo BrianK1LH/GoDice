@@ -11,7 +11,20 @@ function getPowerOfDice() {
 		let diceElem = connectedDice[diceId];
 		diceElem.getBatteryLevel();
 	}
+}
 
+function getSumTotalOfDice() {
+	var countingDice = 0;
+	for (let diceId in connectedDice) {
+		//let diceElem = connectedDice[diceId];
+		
+		let diceElem = document.getElementById(diceId + "-die-status");
+		countingDice += diceElem.textContent
+	}
+	
+	summaryElem = document.getElementById("dice-sum-total");
+	summaryElem.textContent = "Sum: " + countingDice;
+	//return countingDice;
 }
 
 /**
@@ -108,6 +121,7 @@ GoDice.prototype.onStable = (diceId, value, xyzArray) => {
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 	//diceIndicatorEl.textContent = "Stable: " + value;
 	diceIndicatorEl.textContent = value;
+	getSumTotalOfDice();
 };
 
 
@@ -118,6 +132,7 @@ GoDice.prototype.onMoveStable = (diceId, value, xyzArray) => {
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 	//diceIndicatorEl.textContent = "Move Stable: " + value;
 	diceIndicatorEl.textContent = value;
+	getSumTotalOfDice();
 };
 
 GoDice.prototype.onBatteryLevel = (diceId, batteryLevel) => {

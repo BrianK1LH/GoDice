@@ -8,19 +8,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<script src="./jquery-3.6.0.min.js"></script>
 	<script src="./godice.js"></script>
-	<script src="./main.js?v=1.14"></script>
+	<script src="./main.js?v=1.15"></script>
 </head>
 
 <body>	
 	<div class="container">
 			<div class="container-fluid">
-			  		v1.14
+			  		v1.15
 				   <button onclick="openConnectionDialog()" type="button" class="btn btn-outline-primary">Connect Dice</button>
 				   <button onclick="getPowerOfDice()" type="button" class="btn btn-outline-primary">Power Levels</button>
 			 </div>
 		</nav>
 		<h3 id="gocube-message"></h3>
 		<div id="dice-host"></div>
+		<div id="dice-sum-total"></div>
 	</div>
 </body>
 
@@ -79,6 +80,9 @@
 }
 .Orange-die-color {
 	background-color: Orange;
+}
+#dice-sum-total {
+	font-size: 30px;
 }
 
 </style>
