@@ -27,7 +27,20 @@ function getSumTotalOfDice() {
 	for (let diceId in connectedDice) {
 		//let diceElem = connectedDice[diceId];
 		let diceElem = document.getElementById(diceId + "-die-status");
-		countingDice += parseInt(diceElem.textContent || 0)
+		var numberValue = diceElem.textContent;
+		switch ( numberValue ) {
+			case 0: 
+			case 1: 
+			case 2: 
+			case 3:
+			case 4:
+			case 5: 
+			case 6: 
+				numberValue = parseInt(numberValue || 0);
+				break;
+			default: numberValue = 0;
+		}
+		countingDice += numberValue;
 	}
 	return countingDice;
 }
