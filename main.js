@@ -13,18 +13,22 @@ function getPowerOfDice() {
 	}
 }
 
+function checkSummary() {
+	var summaryChecked = document.getElementById('sumCheckbox');
+	if ( sumCheckboxElme.checked ) {
+        let sumCount = getSumTotalOfDice();
+		summaryElem = document.getElementById("dice-sum-total");
+		summaryElem.textContent = "Sum: " + sumCount;
+    } 
+}
 function getSumTotalOfDice() {
 	var countingDice = 0;
 	for (let diceId in connectedDice) {
 		//let diceElem = connectedDice[diceId];
-		
 		let diceElem = document.getElementById(diceId + "-die-status");
-		countingDice += diceElem.textContent
+		countingDice += parseInt(countingDice+diceElem.textContent || 0)
 	}
-	
-	summaryElem = document.getElementById("dice-sum-total");
-	summaryElem.textContent = "Sum: " + countingDice;
-	//return countingDice;
+	return countingDice;
 }
 
 /**
@@ -121,7 +125,7 @@ GoDice.prototype.onStable = (diceId, value, xyzArray) => {
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 	//diceIndicatorEl.textContent = "Stable: " + value;
 	diceIndicatorEl.textContent = value;
-	getSumTotalOfDice();
+	checkSummary();
 };
 
 
@@ -132,7 +136,7 @@ GoDice.prototype.onMoveStable = (diceId, value, xyzArray) => {
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 	//diceIndicatorEl.textContent = "Move Stable: " + value;
 	diceIndicatorEl.textContent = value;
-	getSumTotalOfDice();
+	checkSummary();
 };
 
 GoDice.prototype.onBatteryLevel = (diceId, batteryLevel) => {
