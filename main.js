@@ -60,13 +60,13 @@ GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
 	getDiceColorButton.className = 'btn btn-outline-primary';
 	getDiceColorButton.onclick = diceInstance.getDiceColor.bind(diceInstance)
 	getDiceColorButton.textContent = 'Get Dice Color';
-	diceHtmlEl.append(getDiceColorButton)
+	//diceHtmlEl.append(getDiceColorButton)
 	
 	
 	// add battery level indicator
 	const colorIndicator = document.createElement('div');
 	colorIndicator.id = `${diceId}-color-indicator`;
-	diceHtmlEl.append(colorIndicator)
+	//diceHtmlEl.append(colorIndicator)
 
 	// add die status indicator
 	const dieStatus = document.createElement('div');
