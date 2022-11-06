@@ -28,4 +28,4 @@
     start_url: "/GoDice/",
     display: "standalone",
     orientation: "portrait",
-  };
+}

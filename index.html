@@ -5,23 +5,23 @@
 	<title>GoDice API Demo</title>
 	<link href="./bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet"  href="./style.css" type="text/css" media="all">	
-	<link rel="manifest" href="./manifest.json"/>
+	<!--<link rel="manifest" href="./manifest.json"/>-->
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	
 	<script>
 		// Check that service workers are supported
-		if ("serviceWorker" in navigator) {
+		/*if ("serviceWorker" in navigator) {
 		  // Use the window load event to keep the page load performant
 		window.addEventListener("load", () => {
 			navigator.serviceWorker.register("./sw.js");
 		  });
-		}
+		}*/
 	</script>
 	
 	<script src="./jquery-3.6.0.min.js"></script>
 	<script src="./godice.js"></script>
-	<script src="./main.js?v=1.13"></script>
+	<script src="./main.js?v=1.131"></script>
 	
 
 </head>
@@ -29,7 +29,7 @@
 <body>	
 	<div class="container">
 			<div class="container-fluid">
-			  		v1.13
+			  		v1.131
 				   <button onclick="openConnectionDialog()" type="button" class="btn btn-outline-primary">Connect Dice</button>
 				   <button onclick="getPowerOfDice()" type="button" class="btn btn-outline-primary">Power Levels</button>
 			 </div>
