@@ -18,7 +18,6 @@ function getDiceHtmlEl(diceID) {
 		return newDiceEl;
 	}
 	return document.getElementById(diceID);
-	return document.getElementById(diceID);
 }
 
 GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
@@ -128,7 +127,7 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 
 	// get dice color indicator element
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
-	const diceColorEl = document.getElementById(diceId + "-color-indicator");
+	//const diceColorEl = document.getElementById(diceId + "-color-indicator");
 	
 	var dieColor = "";
 	switch (color) {
@@ -151,5 +150,6 @@ GoDice.prototype.onDiceColor = (diceId, color) => {
 	//diceColorEl.className = `${dieColor}-die-color`;
 	
 	// put dice color value into battery indicator html element
-	diceColorEl.textContent = dieColor;
+	//diceColorEl.textContent = dieColor;
+	diceIndicatorEl.textContent = "C";
 };
