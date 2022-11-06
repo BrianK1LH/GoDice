@@ -98,7 +98,7 @@ GoDice.prototype.onRollStart = (diceId) => {
 	const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 
 	// show rolling 
-	diceIndicatorEl.textContent = "-R-";
+	diceIndicatorEl.textContent = "-";
 };
 
 GoDice.prototype.onStable = (diceId, value, xyzArray) => {
