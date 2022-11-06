@@ -14,7 +14,7 @@ function getPowerOfDice() {
 }
 
 function checkSummary() {
-	var summaryChecked = document.getElementById('sumCheckbox');
+	var sumCheckboxElme = document.getElementById('sumCheckbox');
 	if ( sumCheckboxElme.checked ) {
         let sumCount = getSumTotalOfDice();
 		summaryElem = document.getElementById("dice-sum-total");
